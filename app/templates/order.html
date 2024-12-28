@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} 
+Order |
+{% endblock title %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href= "{% static 'app/css/order.css' %}" >
+{% endblock extra_css %}
+
+{% block body %}
+<div class="row justify-content-center">
+    <div class="col-lg-10">
+        <div class="wrapper">
+            <div class="row no-gutters">
+                <div class="col-md-6 d-flex align-items-stretch">
+                    <div class="contact-wrap w-100 p-md-5 p-4 py-5">
+                        <h3 class="mb-4">Order your favourite item here!</h3>
+                        <form method="POST" id="contactForm" name="contactForm" class="contactForm" onsubmit="showAlert(event)">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="item">Item Name</label>
+                                        <div class="input-group">
+                                            <select class="form-control" name="item" id="item" required>
+                                                {% for menu_item in menu_items %}
+                                                    <option value="{{ menu_item.name }}">{{ menu_item.name }}</option>
+                                                {% endfor %}
+                                            </select>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-secondary" type="button" onclick="addItem()">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12"> 
+                                    <div class="form-group">
+                                        <label for="name">Name</label>
+                                        <input type="text" class="form-control" name="name" id="name" placeholder="Your Name" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12"> 
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" name="email" id="email" placeholder="Email address" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12"> 
+                                    <div class="form-group">
+                                        <label for="phone">Phone</label>
+                                        <input type="tel" class="form-control" name="phone" id="phone" placeholder="Mobile No." required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="address">Address</label>
+                                        <input type="text" class="form-control" name="address" id="address" placeholder="Delivery address" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="message">Message</label>
+                                        <textarea name="message" class="form-control" id="message" cols="30" rows="6" placeholder="Your feedback message is must..."></textarea>
+                                    </div>
+                                </div>
+                                <div id="additional-items"></div> <!-- Container for additional items -->
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="submit" value="Place your Order" class="btn btn-primary" required>
+                                        <div class="submitting"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6 d-flex align-items-stretch">
+                    <div class="info-wrap w-100 p-md-5 p-4 py-5 img">
+                        <h3>Our Contact information</h3>
+                        <p class="mb-4">We’re here for any suggestions or simply to connect.</p>
+                        <div class="dbox w-100 d-flex align-items-start">
+                            <div class="icon d-flex align-items-center justify-content-center">
+                                <span class="fa fa-map-marker"></span>
+                            </div>
+                            <div class="text pl-1">
+                                <p><span>901 9th Floor Synergy Business Park, behind Pravasi Indl. Estate, Goregaon, Mumbai, Maharashtra 400063, India</span></p>
+                            </div>
+                        </div>  
+                        <div class="dbox w-100 d-flex align-items-center">
+                            <div class="icon d-flex align-items-center justify-content-center">
+                                <span class="fa fa-phone"></span>
+                            </div>
+                            <div class="text pl-1">
+                                <p><span><a href="tel://1234567920">+91 123456789</span></a></p>
+                            </div>
+                        </div>
+                        <div class="dbox w-100 d-flex align-items-center">
+                            <div class="icon d-flex align-items-center justify-content-center">
+                                <span class="fa fa-paper-plane"></span>
+                            </div>
+                            <div class="text pl-1">
+                                <p><span><a href="mailto:info@yoursite.com">dhyan.work.2815@gmail.com</span></a></p>
+                            </div>
+                        </div>
+                        <div class="dbox w-100 d-flex align-items-center">
+                            <div class="icon d-flex align-items-center justify-content-center">
+                                <span class="fa fa-globe"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function showAlert(event) {
+    event.preventDefault(); // Prevent form from submitting the traditional way
+    alert("Your order has been placed, Click to see your Order confirmation!");
+
+    // Submit the form programmatically
+    document.getElementById('contactForm').submit();
+}
+
+function addItem() {
+    const itemDiv = document.querySelector('.form-group'); // Select the first item input div
+    const additionalItems = document.getElementById('additional-items');
+    
+    // Create a new div for the new item select input
+    const itemSelect = document.createElement('div');
+    itemSelect.classList.add('form-group');
+    
+    // Inner HTML for the new item input field
+    itemSelect.innerHTML = `
+        <label for="item">Item Name</label>
+        <div class="input-group">
+            <select class="form-control" name="item" required>
+                {% for menu_item in menu_items %}
+                    <option value="{{ menu_item.name }}">{{ menu_item.name }}</option>
+                {% endfor %}
+            </select>
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" onclick="addItem()">+</button>
+            </div>
+        </div>
+    `;
+    
+    // Insert the new item input directly after the first item input
+    itemDiv.parentNode.insertBefore(itemSelect, itemDiv.nextSibling);
+}
+
+</script>
+
+{% endblock body %}

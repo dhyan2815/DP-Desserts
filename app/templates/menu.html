@@ -1,0 +1,134 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} 
+Menu | 
+{% endblock title %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href= "{% static 'app/css/menu.css' %}" >
+  {% endblock extra_css %}
+
+{% block body %}
+
+<!-- Menu section -->
+<div class="container my-3">
+    <h3 class="my-4 text-center">Explore DP's Selections</h3>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://plus.unsplash.com/premium_photo-1723867522131-af9733323bc1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Q2hvY29sYXRlJTIwbGF2YSUyMGNha2V8ZW58MHwwfDB8fHww" class="d-block w-100" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Chocolate Lava Cake</h5>
+              <p class="card-text">A rich, molten center bursts with velvety chocolate flavor, melting every bite.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://plus.unsplash.com/premium_photo-1695028378225-97fbe39df62a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHRpcmFtaXN1fGVufDB8MHwwfHx8MA%3D%3D" class="d-block w-100" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Tiramisu</h5>
+              <p class="card-text">Delicately layered with espresso-soaked ladyfingers and creamy mascarpone, each spoonful is a light, luxurious indulgence.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://images.unsplash.com/photo-1582461833047-2aeb4f8af173?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Salted Camarel Cheesecake</h5>
+              <p class="card-text">Smooth and creamy with a hint of sea salt balancing the sweet caramel, it’s a dessert lover’s dream.</p>
+            </div>
+          </div>
+        </div>
+    
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://plus.unsplash.com/premium_photo-1715969393573-41c78065218a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHN0cmF3YmVycnklMjBzaG9ydGNha2V8ZW58MHwwfDB8fHww" class="d-block w-100" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Strawberry Shortcake</h5>
+              <p class="card-text">Fluffy cake layered with whipped cream and juicy strawberries makes each bite refreshingly sweet.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://images.unsplash.com/photo-1630151318455-b041dcd48d6c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGxlbW9uJTIwdGFydHxlbnwwfDB8MHx8fDA%3D" class="d-block w-100" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Lemon Tart</h5>
+              <p class="card-text">Bright, tangy lemon filling meets a crisp buttery crust, creating a perfect balance of sweet and zesty.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://images.unsplash.com/photo-1601000938365-f182c5ec2f77?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFub2ZmZSUyMHBpZXxlbnwwfDB8MHx8fDA%3D" class="d-block w-100" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Banoffee Pie</h5>
+              <p class="card-text">Layers of toffee, bananas, and whipped cream over a crumbly crust make each bite both sweet and satisfying.</p>
+            </div>
+          </div>
+        </div>
+    
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://images.unsplash.com/photo-1667734549401-714c9ead68b3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bWFjYXJvbnN8ZW58MHwwfDB8fHww" class="d-block w-100" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Macarons</h5>
+              <p class="card-text">Light, airy, and bursting with flavors like pistachio, raspberry, or chocolate, they’re a delightful little treat.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://images.unsplash.com/photo-1432139438709-ee8369449944?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Q3IlQzMlQThtZSUyMEJyJUMzJUJCbCVDMyVBOWV8ZW58MHwwfDB8fHww" class="d-block w-100" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Crème Brûlée</h5>
+              <p class="card-text">With a crunchy caramelized top over a smooth vanilla custard, it’s a blend of textures and rich, creamy flavor.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://images.unsplash.com/photo-1511996946289-f0c071823341?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXBwbGUlMjBjcnVtYmxlfGVufDB8MHwwfHx8MA%3D%3D" class="d-block w-100" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Apple Crumble</h5>
+              <p class="card-text">Warm, spiced apples topped with a crunchy oat crumble, served best with a scoop of vanilla ice cream.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://images.unsplash.com/photo-1703876087817-010eef3e0d59?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Drizzled Chocolate Brownies</h5>
+              <p class="card-text">A row of freshly baked chocolate brownies drizzled with gooey caramel sauce and a sprinkle of sea salt.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://images.unsplash.com/photo-1583915374628-de7430eae056?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Freshed Apple Cake</h5>
+              <p class="card-text">A moist and flavorful dessert made with fresh apples, warm spices like cinnamon, and a tender cake base.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://images.unsplash.com/photo-1515208104371-33f379f845a4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Multi Sprinkled Donut</h5>
+              <p class="card-text">A soft, fluffy donut coated with a sweet glaze and generously topped with colorful sprinkles. It's a fun and cheerful treat!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+
+
+{% endblock body %}
