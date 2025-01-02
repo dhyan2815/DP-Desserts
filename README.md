@@ -1,4 +1,4 @@
-# 🌐 DP's Desserts - A basic dessert serving site
+# 🌐 DP's Desserts
 
 Welcome to **DP's Baazar**! This guide will walk you through the steps to set up and view the project in your web browser.
 
