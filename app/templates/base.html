@@ -7,8 +7,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    {% comment %} Bootstrap CSS {% endcomment %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
 
+    {% comment %} Font Awesome CSS {% endcomment %}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    {% comment %} Font Google Styles {% endcomment %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Tsukimi+Rounded&family=Walter+Turncoat&display=swap" rel="stylesheet">
+
+    {% comment %} Global Font Style {% endcomment %}
+    <style>
+        body {
+            font-family: "Rubik", serif;
+            font-weight: 500;
+        }
+    </style>
+
+    {% comment %} Favicon {% endcomment %}
     <link rel="icon" type="image/x-icon" href="{% static '\app\images\favicon.ico' %}">
 
     <title>{% block title %}{% endblock title %} DP's Desserts</title>
@@ -19,7 +37,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="/home">
             <img src="static/app/images/favicon.ico" alt="Logo"
-            class="img-fluid" style="height: 30px;">
+            class="img-fluid" style="height: 28px;">
             DP's Desserts
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
