@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse
+from django.core.paginator import Paginator
 
 # Create your views here.
 from django.shortcuts import render, redirect
@@ -15,7 +16,21 @@ def about(request):
     return render(request, "about.html")
 
 def menu(request):
-    return render(request, "menu.html")
+    # Fetch all menu items
+    menu_items = MenuItem.objects.all()
+    # Create paginator with 9 items per page
+    paginator = Paginator(menu_items, 9)
+    
+    # Get the current page number from the request
+    page_number = request.GET.get('page', 1)
+
+    # Get the items for the current page
+    page_obj = paginator.get_page(page_number)
+    
+    context = {
+        'page_obj': page_obj,  # Pass the paginator object to the template
+    }
+    return render(request, "menu.html", context)
 
 def order(request):
     menu_items = MenuItem.objects.all()
